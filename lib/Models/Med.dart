@@ -23,6 +23,5 @@ class Med {
     var tempList = details[0].toString().split('-').toList();
     tempList.removeAt(0);
     return tempList;
-    //return details[0].toString().split('-').toList();
   }
 }

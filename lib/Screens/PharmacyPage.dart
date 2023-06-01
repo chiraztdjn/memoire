@@ -16,6 +16,13 @@ class PharmacyPage extends StatefulWidget {
 
 class _PharmacyPageState extends State<PharmacyPage> {
   @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    print(widget.user.orders.length);
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
@@ -69,11 +76,9 @@ class _PharmacyPageState extends State<PharmacyPage> {
                           color: Colors.transparent,
                         ),
                         itemBuilder: (context, index) {
-                          return widget.user.orders[index].state !=
-                                      "CANCELLED" &&
-                                  widget.user.orders[index].state != "CONFIRMED"
+                          return widget.user.orders[index].state == "PENDING"
                               ? _listTile(index)
-                              : null;
+                              : Container();
                         },
                         itemCount: widget.user.orders.length,
                       )
@@ -98,6 +103,7 @@ class _PharmacyPageState extends State<PharmacyPage> {
   }
 
   _listTile(int orderIndex) {
+    widget.user.orders[orderIndex].state;
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.all(
