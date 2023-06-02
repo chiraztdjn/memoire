@@ -6,7 +6,7 @@ const app = express();
 app.use(express.json());
 
 app.get("/", (req: Request, res: Response) => {
-  res.json("GAY").status(200);
+  res.json("ok").status(200);
 });
 
 const port = 5000;
