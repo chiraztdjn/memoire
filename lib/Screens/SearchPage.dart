@@ -27,13 +27,13 @@ class _SearchPageState extends State<SearchPage> {
   }
 
   Future<void> loadData() async {
-    await API.getMeds(updateKidsState);
+    await API.getMeds(updateMedsState);
   }
 
-  void updateKidsState(List<Med> loadedKids) {
+  void updateMedsState(List<Med> loadedMeds) {
     setState(() {
-      meds = loadedKids;
-      untouchedMeds = loadedKids;
+      meds = loadedMeds;
+      untouchedMeds = loadedMeds;
     });
   }
 
